@@ -1,0 +1,69 @@
+<html>
+
+<head>
+    <title>Lab 4 JS Events</title>
+</head>
+<style>
+    h1,
+    h4,
+    h2 {
+        text-align: center;
+    }
+    
+    form {
+        display: block;
+        margin: auto;
+        text-align: center;
+        box-shadow: 10px 20px 30px grey;
+        width: 50%;
+    }
+    
+    input,
+    select,
+    div {
+        margin: 10px;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <section>
+        <h2>Examples on Event Handling</h2>
+        <form id="colour">
+            <select onchange="changeColor(this.value)">
+                <option value="#74917c">Cyan</option>
+                <option value="red">Red</option>
+                <option value="orange">Orange</option>
+            </select>
+            <div>
+                <button onclick="alert('Onclick Event')">Click event</button>
+            </div>
+            <div>
+                <button onmouseover="alert('Onmouseover Event')">Onmouseover event</button>
+            </div>
+            <div>
+                <button onmouseout="alert('Onmouseout Event')">Onmouseout event</button>
+            </div>
+            <div>
+                <input type="text" onfocus="myFunction1(this)" name="fname" placeholder="Type anything..">
+                <br/>
+                <input type="submit" name="Submit" value="Submit" onclick="myFunction();">
+            </div>
+        </form>
+    </section>
+</body>
+<script>
+    function changeColor(color) {
+        document.getElementById('colour').style.background = color;
+    }
+
+    function myFunction() {
+        alert("The form is submitted");
+    }
+
+    function myFunction1(x) {
+        x.style.background = "yellow";
+    }
+</script>
+
+</html>

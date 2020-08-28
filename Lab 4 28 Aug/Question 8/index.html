@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculator</title>
+
+</head>
+
+<body>
+    <style>
+        h1,
+        h4,
+        h2 {
+            text-align: center;
+        }
+        
+        form {
+            display: block;
+            margin: auto;
+            text-align: center;
+            box-shadow: 10px 20px 30px grey;
+            width: 50%;
+        }
+        
+        input {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+    <section>
+        <h2>JS CALCULATOR</h2>
+    </section>
+    <form onsubmit="event.preventDefault();">
+        <div>
+            <label for="">NUMBER 1</label>
+            <input name="num1" type="text" size=10 id='num1' placeholder="Enter 1st No." />
+        </div>
+        <div>
+            <label for="">NUMBER 2</label>
+            <input name="num2" type="text" size=10 id='num2' placeholder="Enter 2nd No." />
+        </div>
+        <div>
+            <button onclick="showresult('1')" id="1">+</button>
+            <button onclick="showresult('2')" id="2">-</button>
+            <button onclick="showresult('3')" id="3">*</button>
+            <button onclick="showresult('4')" id="4">/</button>
+        </div>
+        <div>
+            <label for="">RESULT</label>
+            <input type="text" id='result'>
+        </div>
+    </form>
+    <script>
+        function showresult(choice) {
+            var n1 = parseFloat(document.getElementById('num1').value);
+            var n2 = parseFloat(document.getElementById('num2').value);
+            var r;
+            var c = choice;
+
+            switch (c) {
+                case '1':
+                    r = n1 + n2;
+                    document.getElementById('1').style.background = 'red';
+                    break;
+                case '2':
+                    r = n1 - n2;
+                    document.getElementById('2').style.background = 'red';
+                    break;
+                case '3':
+                    r = n1 * n2;
+                    document.getElementById('3').style.background = 'red';
+                    break;
+                case '4':
+                    r = n1 / n2;
+                    document.getElementById('4').style.background = 'red';
+                    break;
+                default:
+                    break;
+
+            }
+            document.getElementById('result').value = r;
+            return true;
+        }
+    </script>
+</body>
+
+</html>

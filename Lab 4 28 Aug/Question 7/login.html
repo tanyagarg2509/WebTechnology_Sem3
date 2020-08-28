@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Lab 4 JS validation</title>
+</head>
+<style>
+    h1,
+    h4,
+    h2 {
+        text-align: center;
+    }
+    
+    form {
+        display: block;
+        margin: auto;
+        text-align: center;
+        box-shadow: 10px 20px 30px grey;
+        width: 50%;
+    }
+    
+    input {
+        margin: 10px;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <section>
+        <h2>Login</h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form>
+            <div>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required placeholder="Enter Your Email">
+            </div>
+            <div>
+                <input type="submit" name="submit" onclick="validate();" value="Submit">
+            </div>
+
+        </form>
+    </section>
+</body>
+<script>
+    function validate() {
+        var e = document.getElementById('email').value;
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (e.match(mailformat)) {
+            alert('Email Verified');
+        } else {
+            alert('Invalid Email');
+        }
+
+    }
+</script>
+
+</html>
