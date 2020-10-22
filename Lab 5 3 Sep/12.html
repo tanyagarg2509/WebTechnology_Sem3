@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hidden value</title>
+
+</head>
+
+<body>
+    <style>
+        h1,
+        h4,
+        h2 {
+            text-align: center;
+        }
+        
+        form {
+            display: block;
+            margin: auto;
+            text-align: center;
+            box-shadow: 10px 20px 30px grey;
+            width: 50%;
+        }
+        
+        input {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+    <section>
+        <h2>Hidden Value</h2>
+    </section>
+    <form>
+        <input type=hidden id="abcId" name="abcName" value="Wall Street! Money Never Sleep" />
+
+        <input type=button class="myButton" value="Get Value" onclick="printIt()" />
+    </form>
+
+</body>
+<script type="text/javascript">
+    function printIt() {
+        alert(document.getElementById('abcId').value);
+    }
+</script>
+
+</html>

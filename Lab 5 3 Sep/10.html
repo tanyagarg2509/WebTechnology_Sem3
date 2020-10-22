@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Native Objects</title>
+
+</head>
+
+<body>
+    <style>
+        h1,
+        h4,
+        h2 {
+            text-align: center;
+        }
+        
+        .myBox {
+            display: block;
+            margin: auto;
+            text-align: center;
+            box-shadow: 10px 20px 30px grey;
+            width: 50%;
+            padding: 10px;
+        }
+        
+        .myBox1 {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        
+        input {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+    <div class="myBox">
+        <section>
+            <h2>Date</h2>
+        </section>
+        <div class="myBox1">
+            <div id="date">
+
+            </div>
+        </div>
+        <section>
+            <h2>Number</h2>
+        </section>
+        <div class="myBox1">
+            <input type="button" class="myButton" value="Click Me" onclick="showValue();" />
+            <div id="number">
+
+            </div>
+        </div>
+        <section>
+            <h2>String</h2>
+        </section>
+        <div class="myBox1">
+            <input type="text" id="mystring">
+            <input type="button" class="myButton" value="Click Me" onclick="showstringValue();" />
+            <div id="string">
+
+            </div>
+        </div>
+        <section>
+            <h2>Math</h2>
+        </section>
+        <div class="myBox1">
+            <div id="math">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    var dt = Date();
+    document.getElementById('date').innerHTML = "Date and Time : " + dt;
+
+    var property_value = Math.LOG2E;
+    document.getElementById('math').innerHTML = "Property Value(Log2) is : " + property_value;
+
+    function showValue() {
+        var val = Number.MAX_VALUE;
+        document.getElementById('number').innerHTML = "Value of MAX_VALUE: " + val;
+    }
+
+    function showstringValue() {
+        var val = document.getElementById('mystring').value;
+        document.getElementById('string').innerHTML = "Uppercase String is: " + val.toLocaleUpperCase();
+    }
+</script>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Cookies</title>
+
+</head>
+
+<body>
+    <style>
+        h1,
+        h4,
+        h2 {
+            text-align: center;
+        }
+        
+        form {
+            display: block;
+            margin: auto;
+            text-align: center;
+            box-shadow: 10px 20px 30px grey;
+            width: 50%;
+        }
+        
+        div #cookie {
+            padding: 10px;
+        }
+        
+        input {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+    <section>
+        <h2>Cookies</h2>
+    </section>
+    <form name="myform">
+        <div>
+            <label for="customer">Enter Name</label>
+            <input type="text" name="customer" />
+        </div>
+        <div>
+            <label> click the Button to View Result:</label>
+            <input type="button" value="Set Cookie" onclick="WriteCookie()" />
+            <input type="button" value="Get Cookie" onclick="ReadCookie()" />
+        </div>
+        <div id="mycookie">
+
+        </div>
+    </form>
+
+</body>
+<script type="text/javascript">
+    function WriteCookie() {
+        cookievalue = (document.myform.customer.value);
+        document.cookie = "name" + "=" + cookievalue + ";";
+        document.getElementById('mycookie').innerHTML = ("Setting Cookies : " + document.cookie);
+    }
+
+    function ReadCookie() {
+        var allcookies = document.cookie;
+        alert(allcookies);
+        // Get all the cookies pairs in an array
+        cookiearray = allcookies.split(';');
+        document.getElementById('mycookie').innerHTML = ("All Cookies : " + allcookies);
+        // Now take key value pair out of this array
+        for (var i = 0; i < cookiearray.length; i++) {
+            name = cookiearray[i].split('=')[0];
+            value = cookiearray[i].split('=')[1];
+            document.getElementById('mycookie').innerHTML += ("<br>Key is : " + name + " and Value is : " + value);
+        }
+    }
+</script>
+
+</html>

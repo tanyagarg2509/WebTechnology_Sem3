@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>User defined Objects</title>
+</head>
+<style>
+    h1,
+    h4,
+    h2 {
+        text-align: center;
+    }
+    
+    #data {
+        display: block;
+        margin: auto;
+        text-align: center;
+        box-shadow: 10px 20px 30px grey;
+        width: 50%;
+        padding: 20px;
+    }
+</style>
+
+<body>
+    <section>
+        <h2>User defined Objects</h2>
+    </section>
+    <div id="data">
+
+    </div>
+</body>
+<script>
+    function run() {
+        customer = new makeCustomer("Tanya Garg", "G-28 Sec-3 161-162", "9643621125");
+        customer.displayCustomer();
+    }
+
+    function displayCustomer() {
+        Temp = "<b>Name: </b>" + this.name + "<BR>";
+        Temp += "<b>Address: </b>" + this.address + "<BR>";
+        Temp += "<b>Phone: </b>" + this.phone + "<BR>";
+        document.getElementById('data').innerHTML = Temp;
+    }
+
+    function makeCustomer(Name, Address, Phone) {
+        this.name = Name;
+        this.address = Address;
+        this.phone = Phone;
+        this.displayCustomer = displayCustomer;
+    }
+    run()
+</script>
+
+</html>
